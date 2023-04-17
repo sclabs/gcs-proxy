@@ -16,6 +16,7 @@ Local testing quickstart
     cd gcs-proxy
     python3 -m venv venv
     source venv/bin/activate
+    pip install -r requirements-dev.in
     pip install -r requirements.txt
     export GCS_PROXY_CLIENT_ID=...  # see below
     export GCS_PROXY_CLIENT_SECRET=...
