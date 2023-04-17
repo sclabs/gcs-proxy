@@ -6,8 +6,10 @@ import os
 import requests
 from flask import Flask, Response, Request, request, redirect, session, url_for
 from requests_oauthlib import OAuth2Session
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 app = Flask(__name__)  # creates flask app
+app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1)  # fixes https behind proxy
 app.config.from_prefixed_env()  # loads FLASK_SECRET_KEY
 
 # oauth setup: client id and secret, urls, scopes
