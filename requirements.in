@@ -1,0 +1,9 @@
+# dev tools
+black
+pip-tools
+ruff
+
+# web
+flask
+requests
+requests-oauthlib
